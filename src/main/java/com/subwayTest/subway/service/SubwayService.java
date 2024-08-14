@@ -1,21 +1,23 @@
 package com.subwayTest.subway.service;
 
-import com.subwayTest.subway.entity.Subway;
-import com.subwayTest.subway.repository.SubwayRepository;
+import com.subwayTest.subway.db1.entities.SubwayEntity;
+import com.subwayTest.subway.db1.repositories.SubwayRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SubwayService {
 
     @Autowired
+
     private SubwayRepository subwayRepository;
 
     @Transactional
-    public String createSubway(Subway subway) {
+    public String createSubway(SubwayEntity subway) {
         try {
             if (!subwayRepository.existsById(subway.getId())){
                 subway.setId(null == subwayRepository.findMaxId()? 0 : subwayRepository.findMaxId() + 1);
@@ -29,17 +31,17 @@ public class SubwayService {
             throw e;
         }
     }
-    public List<Subway> readAllSubways() {
+    public List<SubwayEntity> readAllSubways() {
         return subwayRepository.findAll();
     }
 
     @Transactional
-    public String updateSubway(Subway subway) {
+    public String updateSubway(SubwayEntity subway) {
         if (subwayRepository.existsById(subway.getId())){
             try {
-                List<Subway> subways = subwayRepository.findById(subway.getId());
+                Optional<SubwayEntity> subways = subwayRepository.findById(subway.getId());
                 subways.stream().forEach( s -> {
-                    Subway subwayToBeUpdated = subwayRepository.findById(s);
+                    SubwayEntity subwayToBeUpdated = subwayRepository.findById(s);
                     subwayToBeUpdated.setCustomerType(subway.getCustomerType());
                     subwayToBeUpdated.setDay1Sales(subway.getDay1Sales());
                     subwayToBeUpdated.setDay2Sales(subway.getDay2Sales());
@@ -76,10 +78,10 @@ public class SubwayService {
     }
 
     @Transactional
-    public String deleteSubway(Subway subway) {
+    public String deleteSubway(SubwayEntity subway) {
         if (subwayRepository.existsById(subway.getId())){
             try {
-                List<Subway> subways = subwayRepository.findById(subway.getId());
+                Optional<SubwayEntity> subways = subwayRepository.findById(subway.getId());
                 subways.stream().forEach( s -> {
                     System.out.println("delete subway function => " + s.toString());
                     subwayRepository.delete(s);
@@ -90,6 +92,7 @@ public class SubwayService {
             }
         }
         else {
+            return "Subway does not exist";
         }
     }
 }

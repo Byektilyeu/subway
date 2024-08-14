@@ -1,6 +1,6 @@
 package com.subwayTest.subway.controller;
 
-import com.subwayTest.subway.entity.Subway;
+import com.subwayTest.subway.db1.entities.SubwayEntity;
 import com.subwayTest.subway.service.SubwayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,22 +20,22 @@ public class SubwayController {
         return "The app is up ...";
     }
     @RequestMapping(value = "createsubway", method = RequestMethod.POST)
-    public String createSubway(@RequestBody Subway subway){
+    public String createSubway(@RequestBody SubwayEntity subway){
         return subwayService.createSubway(subway);
     }
 
     @RequestMapping(value = "readallsubways", method = RequestMethod.GET)
-    public List<Subway> readAllSubways(){
+    public List<SubwayEntity> readAllSubways(){
        return subwayService.readAllSubways();
     }
 
     @RequestMapping(value = "updatesubway", method = RequestMethod.PUT)
-    public String updateSubway(@RequestBody Subway subway){
+    public String updateSubway(@RequestBody SubwayEntity subway){
         return subwayService.updateSubway(subway);
     }
 
     @RequestMapping(value = "deletesubway", method = RequestMethod.DELETE)
-    public String deleteSubway(@RequestBody Subway subway){
+    public String deleteSubway(@RequestBody SubwayEntity subway){
         return subwayService.deleteSubway(subway);
     }
 

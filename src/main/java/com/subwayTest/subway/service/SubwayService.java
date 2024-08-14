@@ -90,7 +90,6 @@ public class SubwayService {
             }
         }
         else {
-            return "Subway does not exist";
         }
     }
 }

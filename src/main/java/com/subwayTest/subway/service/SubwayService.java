@@ -2,6 +2,7 @@ package com.subwayTest.subway.service;
 
 import com.subwayTest.subway.db1.entities.SubwayEntity;
 import com.subwayTest.subway.db1.repositories.SubwayRepository;
+import com.subwayTest.subway.db2.repositories.RkeeperRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,9 @@ import java.util.Optional;
 public class SubwayService {
 
     @Autowired
-
     private SubwayRepository subwayRepository;
+    @Autowired
+    private RkeeperRepository rkeeperRepository;
 
     @Transactional
     public String createSubway(SubwayEntity subway) {

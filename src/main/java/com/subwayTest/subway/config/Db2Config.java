@@ -44,7 +44,7 @@ public class Db2Config {
 
         return builder.dataSource(dataSource)
                 .properties(properties)
-                .packages("com.subwayTest.subway.db2.entities.entities")
+                .packages("com.subwayTest.subway.db2.entities")
                 .persistenceUnit("db2")
                 .build();
     }

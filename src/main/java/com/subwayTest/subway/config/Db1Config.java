@@ -31,7 +31,7 @@ import java.util.HashMap;
 
 )
 public class Db1Config {
-
+    @Primary
     @Bean(name = "db1DataSource")
     @ConfigurationProperties(prefix = "spring.db1.datasource")
     public DataSource dataSource() {
@@ -48,7 +48,7 @@ public class Db1Config {
 
         return builder.dataSource(dataSource)
                 .properties(properties)
-                .packages("com.subwayTest.subway.db1.entities.entities")
+                .packages("com.subwayTest.subway.db1.entities")
                 .persistenceUnit("db1")
                 .build();
     }

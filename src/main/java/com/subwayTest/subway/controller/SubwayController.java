@@ -19,22 +19,22 @@ public class SubwayController {
     public String info(){
         return "The app is up ...";
     }
-    @RequestMapping(value = "createsubway", method = RequestMethod.POST)
+    @RequestMapping(value = "createsubwayitems", method = RequestMethod.POST)
     public String createSubway(@RequestBody SubwayEntity subway){
         return subwayService.createSubway(subway);
     }
 
-    @RequestMapping(value = "readallsubways", method = RequestMethod.GET)
+    @RequestMapping(value = "readallsubwayitems", method = RequestMethod.GET)
     public List<SubwayEntity> readAllSubways(){
        return subwayService.readAllSubways();
     }
 
-    @RequestMapping(value = "updatesubway", method = RequestMethod.PUT)
+    @RequestMapping(value = "updatesubwayitem", method = RequestMethod.PUT)
     public String updateSubway(@RequestBody SubwayEntity subway){
         return subwayService.updateSubway(subway);
     }
 
-    @RequestMapping(value = "deletesubway", method = RequestMethod.DELETE)
+    @RequestMapping(value = "deletesubwayitem", method = RequestMethod.DELETE)
     public String deleteSubway(@RequestBody SubwayEntity subway){
         return subwayService.deleteSubway(subway);
     }

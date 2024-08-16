@@ -1,42 +1,40 @@
 package com.subwayTest.subway.db1.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
 
 @Entity
-@Table(name = "table_sqlite")
 public class SubwayEntity {
     @Id
-    public int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-    public String storeNum;
-    public Date weekEndingDate;
-    public String vendorId;
-    public String vendorName;
-    public String vendorCountry;
-    public String customerType;
-    public Float day1Sales;
-    public Float day2Sales;
+    private String storeNum;
+    private Date weekEndingDate;
+    private String vendorId;
+    private String vendorName;
+    private String vendorCountry;
+    private String customerType;
+    private Float day1Sales;
+    private Float day2Sales;
     public Float day3Sales;
-    public Float day4Sales;
-    public Float day5Sales;
-    public Float day6Sales;
-    public Float day7Sales;
-    public Float partySales;
-    public Float drinkSales;
-    public Float miscSales;
-    public Integer numberOfFootlongs;
-    public Integer numberOfSixInch;
-    public Integer numberOfFourInch;
-    public Integer numberOfSaladPlates;
-    public Integer numberOfDrinks;
-    public Float hoursOpened;
-    public Float hoursWorked;
-    public Integer numberOfTransactions;
+    private Float day4Sales;
+    private Float day5Sales;
+    private Float day6Sales;
+    private Float day7Sales;
+    private Float partySales;
+    private Float drinkSales;
+    private Float miscSales;
+    private Integer numberOfFootlongs;
+    private Integer numberOfSixInch;
+    private Integer numberOfFourInch;
+    private Integer numberOfSaladPlates;
+    private Integer numberOfDrinks;
+    private Float hoursOpened;
+    private Float hoursWorked;
+    private Integer numberOfTransactions;
 
 //    public Subway(Integer id, String storeNum, Date weekEndingDate, String vendorId, String vendorName, String vendorCountry, String customerType, Float day1Sales, Float day2Sales, Float day3Sales, Float day4Sales, Float day5Sales, Float day6Sales, Float day7Sales, Float partySales, Float drinkSales, Float miscSales, Integer numberOfFootlongs, Integer numberOfSixInch, Integer numberOfFourInch, Integer numberOfSaladPlates, Integer numberOfDrinks, Float hoursOpened, Float hoursWorked, Integer numberOfTransactions) {
 //        this.id = id;
@@ -66,7 +64,8 @@ public class SubwayEntity {
 //        this.numberOfTransactions = numberOfTransactions;
 //    }
 
-    public SubwayEntity( String storeNum, Date weekEndingDate, String vendorId, String vendorName, String vendorCountry, String customerType, Float day1Sales, Float day2Sales, Float day3Sales, Float day4Sales, Float day5Sales, Float day6Sales, Float day7Sales, Float partySales, Float drinkSales, Float miscSales, Integer numberOfFootlongs, Integer numberOfSixInch, Integer numberOfFourInch, Integer numberOfSaladPlates, Integer numberOfDrinks, Float hoursOpened, Float hoursWorked, Integer numberOfTransactions) {
+    public SubwayEntity(Integer id,  String storeNum, Date weekEndingDate, String vendorId, String vendorName, String vendorCountry, String customerType, Float day1Sales, Float day2Sales, Float day3Sales, Float day4Sales, Float day5Sales, Float day6Sales, Float day7Sales, Float partySales, Float drinkSales, Float miscSales, Integer numberOfFootlongs, Integer numberOfSixInch, Integer numberOfFourInch, Integer numberOfSaladPlates, Integer numberOfDrinks, Float hoursOpened, Float hoursWorked, Integer numberOfTransactions) {
+        this.id = id;
         this.storeNum = storeNum;
         this.weekEndingDate = weekEndingDate;
         this.vendorId = vendorId;

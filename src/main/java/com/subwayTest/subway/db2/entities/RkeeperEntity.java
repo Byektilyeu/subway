@@ -2,13 +2,12 @@ package com.subwayTest.subway.db2.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 import java.util.Date;
 
 
 @Entity
-@Table(name = "table_mssql")
+//@Table(name = "table_mssql")
 public class RkeeperEntity {
     @Id
     public int id;
@@ -37,34 +36,6 @@ public class RkeeperEntity {
     public Float hoursOpened;
     public Float hoursWorked;
     public Integer numberOfTransactions;
-
-//    public Subway(Integer id, String storeNum, Date weekEndingDate, String vendorId, String vendorName, String vendorCountry, String customerType, Float day1Sales, Float day2Sales, Float day3Sales, Float day4Sales, Float day5Sales, Float day6Sales, Float day7Sales, Float partySales, Float drinkSales, Float miscSales, Integer numberOfFootlongs, Integer numberOfSixInch, Integer numberOfFourInch, Integer numberOfSaladPlates, Integer numberOfDrinks, Float hoursOpened, Float hoursWorked, Integer numberOfTransactions) {
-//        this.id = id;
-//        this.storeNum = storeNum;
-//        this.weekEndingDate = weekEndingDate;
-//        this.vendorId = vendorId;
-//        this.vendorName = vendorName;
-//        this.vendorCountry = vendorCountry;
-//        this.customerType = customerType;
-//        this.day1Sales = day1Sales;
-//        this.day2Sales = day2Sales;
-//        this.day3Sales = day3Sales;
-//        this.day4Sales = day4Sales;
-//        this.day5Sales = day5Sales;
-//        this.day6Sales = day6Sales;
-//        this.day7Sales = day7Sales;
-//        this.partySales = partySales;
-//        this.drinkSales = drinkSales;
-//        this.miscSales = miscSales;
-//        this.numberOfFootlongs = numberOfFootlongs;
-//        this.numberOfSixInch = numberOfSixInch;
-//        this.numberOfFourInch = numberOfFourInch;
-//        this.numberOfSaladPlates = numberOfSaladPlates;
-//        this.numberOfDrinks = numberOfDrinks;
-//        this.hoursOpened = hoursOpened;
-//        this.hoursWorked = hoursWorked;
-//        this.numberOfTransactions = numberOfTransactions;
-//    }
 
     public RkeeperEntity( String storeNum, Date weekEndingDate, String vendorId, String vendorName, String vendorCountry, String customerType, Float day1Sales, Float day2Sales, Float day3Sales, Float day4Sales, Float day5Sales, Float day6Sales, Float day7Sales, Float partySales, Float drinkSales, Float miscSales, Integer numberOfFootlongs, Integer numberOfSixInch, Integer numberOfFourInch, Integer numberOfSaladPlates, Integer numberOfDrinks, Float hoursOpened, Float hoursWorked, Integer numberOfTransactions) {
         this.storeNum = storeNum;
